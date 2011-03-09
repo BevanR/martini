@@ -102,12 +102,29 @@ input[type="text"], textarea, select {
 }
 
 
+/* Link colors
+---------------------------------------------------------------------------- */
 
 a,
 a:link,
 a:visited {
   color: #0088cc;
 }
+
+/* Override the color of links in the page title (the parent projects of a subject) so that they are visible. */
+#header h1 a,
+#header h1 a:link,
+#header h1 a:visited {
+  color: #888;
+  /* Add an underline to note that they are links. */
+  text-decoration: underline;
+}
+
+/* Make it blatantly obvious that they are links on hover. */
+#header h1 a:hover {
+  color: #0088cc;
+}
+
 
 /* Top menu
 ---------------------------------------------------------------------------- */
