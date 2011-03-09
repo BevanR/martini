@@ -204,19 +204,34 @@ table.list thead th {
   text-transform: uppercase;
 }
 
-table.list thead th a {
-  color: #000;
+/* Align the checkboxes too in the issues table. */
+table.list td.checkbox {
+  padding: 7px 10px 7px 3px;
 }
 
-table.list thead th a:hover {
-  color: #000;
+/* A subtle difference in size between links and non-links in issue tables. */
+table.list tr.issue {
+  font-size: 90%;
+}
+
+table.list tr.issue a {
+  font-size: 111.111%; /* 100 / 90 = 111.11r */
+  /* Also, make the hover area of the link as large as practical. */
+  display: block;
+}
+
+/* Blatantly obvious links on hover. */
+table.list tr.issue a:hover {
+  color: #0088cc;
+}
+
+/* Tweak the layout for the litle arrow on child-issues for the block-layout of the link. */
+table.list tr.issue.idnt td.subject a {
+  background-position: -6px 1px;
+  padding-left: 8px;
 }
 
 /* Issues grid styles by priorities (provided by Wynn Netherland) */
-table.list tr.issue a {
-  color: #333;
-}
-
 tr.odd.priority-5, table.list tbody tr.odd.priority-5:hover { color: #900; font-weight: bold; }
 tr.odd.priority-5 { background: #ffc4c4; }
 tr.even.priority-5, table.list tbody tr.even.priority-5:hover { color: #900; font-weight: bold; }
@@ -237,6 +252,11 @@ tr.even.priority-3, table.list tbody tr.even.priority-3:hover { color: #900; }
 tr.even.priority-3 { background: #fff2f2; }
 tr.priority-3 a { color: #900; }
 tr.odd.priority-3 td, tr.even.priority-3 td { border-color: #fcc; }
+
+/* Set the default colors for non-link text issue rows of "Normal" priority. */
+tr.odd.priority-2, table.list tbody tr.odd.priority-2:hover { color: #333; }
+tr.even.priority-2, table.list tbody tr.even.priority-2:hover { color: #333; }
+tr.priority-2 a { color: #333; }
 
 tr.odd.priority-1, table.list tbody tr.odd.priority-1:hover { color: #559; }
 tr.odd.priority-1 { background: #eaf7ff; }
