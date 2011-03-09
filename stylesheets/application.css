@@ -26,8 +26,21 @@ body,
   font-size: 100%;
 }
 
+/* Let the header flow instead of having fixed height, so that really long project names can wrap without overlapping content. */
 #header {
-  height: 6.5em;
+  height: auto;
+}
+
+/* Float the page title left so that it will fall below the search box if it gets too wide. */
+#header h1 {
+  float: left;
+  margin-left: .3em;
+}
+
+/* Make sure the main-menu is cleared of the flowing and floated page title (#header h1). */
+#main-menu {
+  position: relative;
+  clear: both;
 }
 
 #main {
@@ -65,7 +78,6 @@ h1, h2, h3, h4 {
 }
 
 #header h1 {
-  margin-left: .3em;
   font-weight: bold;
 }
 
@@ -260,4 +272,27 @@ fieldset {
 img.gravatar {
   margin-bottom: -.2em;
   margin-right: .5em;
+}
+
+
+/* A block-clearing class
+---------------------------------------------------------------------------- */
+.clearfix:after,
+#header:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* IE6 */
+* html .clearfix,
+* html #header {
+  height: 1%;
+}
+/* IE7 */
+*:first-child + html .clearfix,
+*:first-child + html #header {
+  min-height: 1%;
 }
