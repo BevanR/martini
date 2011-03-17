@@ -34,13 +34,14 @@ body,
 /* Float the page title left so that it will fall below the search box if it gets too wide. */
 #header h1 {
   float: left;
-  margin-left: .3em;
+  margin: 0 .3em 0.7em;
 }
 
 /* Make sure the main-menu is cleared of the flowing and floated page title (#header h1). */
 #main-menu {
   position: relative;
   clear: both;
+  margin: 0 0 0 -6px;
 }
 
 #main {
